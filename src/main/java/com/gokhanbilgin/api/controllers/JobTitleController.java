@@ -16,6 +16,7 @@ public class JobTitleController {
 
 	private JobTitleService jobTitleService;
 
+	
 	@Autowired
 	public JobTitleController(JobTitleService jobTitleService) {
 		super();
