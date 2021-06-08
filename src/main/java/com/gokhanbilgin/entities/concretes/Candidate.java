@@ -13,15 +13,15 @@ import lombok.EqualsAndHashCode;
 @Table(name = "candidates")
 public class Candidate extends User {
 
-	@Column(name = "first_name")
+	@Column(name = "first_name", nullable = false)
 	private String firstName;
 
-	@Column(name = "last_name")
+	@Column(name = "last_name", nullable = false)
 	private String lastName;
 
-	@Column(name = "identity_number")
+	@Column(name = "identity_number", nullable = false)
 	private String identityNo;
 
-	@Column(name = "birth_year")
+	@Column(name = "birth_year", nullable = false)
 	private int birthYear;
 }
