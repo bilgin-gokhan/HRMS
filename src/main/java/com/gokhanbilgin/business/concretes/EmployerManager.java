@@ -9,6 +9,7 @@ import com.gokhanbilgin.business.abstracts.EmployerService;
 import com.gokhanbilgin.core.utilities.results.DataResult;
 import com.gokhanbilgin.core.utilities.results.Result;
 import com.gokhanbilgin.core.utilities.results.SuccessDataResult;
+import com.gokhanbilgin.core.utilities.results.SuccessResult;
 import com.gokhanbilgin.dataAccess.abstracts.EmployerDao;
 import com.gokhanbilgin.entities.concretes.Employer;
 
@@ -30,8 +31,8 @@ public class EmployerManager implements EmployerService {
 
 	@Override
 	public Result add(Employer employer) {
-		// TODO Auto-generated method stub
-		return null;
+		this.employerDao.save(employer);
+		return new SuccessResult("İş veren eklendi.");
 	}
 
 }
