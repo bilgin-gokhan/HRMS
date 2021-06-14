@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.gokhanbilgin.business.abstracts.EmployerService;
 import com.gokhanbilgin.core.utilities.results.DataResult;
+import com.gokhanbilgin.core.utilities.results.ErrorResult;
 import com.gokhanbilgin.core.utilities.results.Result;
 import com.gokhanbilgin.core.utilities.results.SuccessDataResult;
 import com.gokhanbilgin.core.utilities.results.SuccessResult;
@@ -31,6 +32,9 @@ public class EmployerManager implements EmployerService {
 
 	@Override
 	public Result add(Employer employer) {
+		if (this.employerDao.existsEmployerByEmail(employer.getEmail())) {
+			return new ErrorResult("Bu iş veren zaten var.");
+		}
 		this.employerDao.save(employer);
 		return new SuccessResult("İş veren eklendi.");
 	}
