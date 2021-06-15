@@ -43,6 +43,9 @@ public class JobAdvertisement {
 	@Column(name = "application_deadline")
 	private LocalDate applicationDeadline;
 
+	@Column(name = "is_active")
+	private boolean isActive;
+
 	@ManyToOne
 	@JoinColumn(name = "id")
 	private Employer employer;
