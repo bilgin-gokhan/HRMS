@@ -46,6 +46,9 @@ public class JobAdvertisement {
 	@Column(name = "is_active")
 	private boolean isActive;
 
+	@Column(name = "created_at")
+	private LocalDate createdAt;
+
 	@ManyToOne
 	@JoinColumn(name = "id")
 	private Employer employer;
